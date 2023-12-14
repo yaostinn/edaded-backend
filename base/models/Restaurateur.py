@@ -1,0 +1,21 @@
+from django.db import models
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
+
+class Restaurateur(models.Model):
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    jobTitle = models.CharField(max_length=255)
+
+    rate = models.ForeignKey('base.Rate', on_delete=models.SET_NULL, null=True)
+    isVisibleRestaurants = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = 'Ресторатор'
+        verbose_name_plural = 'Рестораторы'
+
+    def __str__(self):
+        return self.user.username
