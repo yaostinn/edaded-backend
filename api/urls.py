@@ -4,11 +4,15 @@ from rest_framework_simplejwt.views import TokenRefreshView
 #BASE VIEWS
 from base.views.Token import UserTokenObtainPairView
 from base.views.Restaurant import RestaurantCreateView, RestaurantUpdateOrDeleteDetailView
-
+from base.views.Category import CategoryCreateView, CategoryUpdateOrDeleteDetailView
 urlpatterns = [
     path('token/', UserTokenObtainPairView.as_view()),
     path('token/refresh/', TokenRefreshView.as_view()),
 
-    path('restaurant/', RestaurantCreateView.as_view(), name = 'restaurant urls'),
+    path('restaurant/', RestaurantCreateView.as_view()),
     path('restaurant/<int:pk>/', RestaurantUpdateOrDeleteDetailView.as_view()),
+
+    
+    path('category/', CategoryCreateView.as_view()),
+    path('category/<int:pk>/', CategoryUpdateOrDeleteDetailView.as_view()),
 ]
