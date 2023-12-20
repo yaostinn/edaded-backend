@@ -1,5 +1,4 @@
 from django.db import models
-
 from base.models.Base import Base
 
 class Category(Base):
