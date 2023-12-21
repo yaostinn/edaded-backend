@@ -5,7 +5,6 @@ User = get_user_model()
 
 
 class Restaurateur(models.Model):
-
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     job_title = models.CharField(max_length=255)

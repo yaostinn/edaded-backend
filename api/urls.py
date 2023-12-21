@@ -6,6 +6,7 @@ from base.views.Token import UserTokenObtainPairView
 from base.views.Restaurant import RestaurantCreateView, RestaurantUpdateOrDeleteDetailView
 from base.views.Category import CategoryCreateView, CategoryUpdateOrDeleteDetailView
 from base.views.MenuItem import MenuItemCreateView, MenuItemUpdateOrDeleteDetailView
+from base.views.Restaurateur import RestaurateurView
 urlpatterns = [
     path('token/', UserTokenObtainPairView.as_view()),
     path('token/refresh/', TokenRefreshView.as_view()),
@@ -18,4 +19,6 @@ urlpatterns = [
 
     path('menu-item/', MenuItemCreateView.as_view()),
     path('menu-item/<int:pk>/', MenuItemUpdateOrDeleteDetailView.as_view()),
+
+    path('restaurateur/', RestaurateurView.as_view()),
 ]
