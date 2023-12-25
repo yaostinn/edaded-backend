@@ -1,7 +1,6 @@
 from django.db import models
 from base.models.Base import Base
 
-
 class Restaurant(Base):
     name = models.CharField(max_length=100)
     image = models.ImageField('Картика',upload_to='restaurants/', blank=True, null=True)

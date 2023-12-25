@@ -7,6 +7,7 @@ User = get_user_model()
 class Restaurateur(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='restaurateur/', blank=True, null=True)
     job_title = models.CharField(max_length=255)
 
     rate = models.ForeignKey('base.Rate', on_delete=models.SET_NULL, null=True)
