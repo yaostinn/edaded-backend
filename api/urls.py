@@ -23,5 +23,5 @@ urlpatterns = [
     path('menu-item/<str:pk>/', MenuItemUpdateOrDeleteDetailView.as_view()),
 
     path('restaurateur/', RestaurateurView.as_view()),
-    path('restaurant-menu/', RestaurantMenuView.as_view()),
+    path('restaurant-menu/<uuid:pk>/', RestaurantMenuView.as_view()),
 ]

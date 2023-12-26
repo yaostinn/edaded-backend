@@ -16,12 +16,12 @@ class RestaurateurAdmin(admin.ModelAdmin):
 
 @admin.register(Restaurant)
 class RestaurantAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('id', 'name')
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('id', 'name')
 
 @admin.register(MenuItem)
 class MenuItemAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('id', 'name')

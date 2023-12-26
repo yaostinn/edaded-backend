@@ -1,13 +1,8 @@
-#REST
 from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated
+from base.models.Restaurant import Restaurant
 
 from base.serializers.RestaurantMenu import RestaurantMenuSerializers
-from base.models.Restaurant import Restaurant
-class RestaurantMenuView(generics.ListAPIView):
+
+class RestaurantMenuView(generics.RetrieveAPIView):
     serializer_class = RestaurantMenuSerializers
-    permission_classes = [IsAuthenticated, ]
-    pagination_class = None
-    def get_queryset(self):
-        return Restaurant.objects.filter(user=self.request.user)
-  
+    queryset = Restaurant.objects.all()
