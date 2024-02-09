@@ -4,7 +4,7 @@ from base.models.Rate import Rate
 from base.models.Restaurateur import Restaurateur
 from base.models.Restaurant import Restaurant
 from base.models.Category import Category
-from base.models.MenuItem import MenuItem
+from base.models.MenuItem import MenuItem, MenuItemPrice
 
 @admin.register(Rate)
 class RateAdmin(admin.ModelAdmin):
@@ -25,3 +25,8 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(MenuItem)
 class MenuItemAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
+
+@admin.register(MenuItemPrice)
+class MenuItemPriceAdmin(admin.ModelAdmin):
+    list_display = ('id', 'size_description')
+
